@@ -1,0 +1,1253 @@
+{
+  "fix": {
+    "_type": "FIXT",
+    "_major": "1",
+    "_minor": "1",
+    "_servicepack": "0",
+    "header": {
+      "field": [
+        {
+          "_name": "BeginString",
+          "_required": "Y"
+        },
+        {
+          "_name": "BodyLength",
+          "_required": "Y"
+        },
+        {
+          "_name": "MsgType",
+          "_required": "Y"
+        },
+        {
+          "_name": "SenderCompID",
+          "_required": "Y"
+        },
+        {
+          "_name": "TargetCompID",
+          "_required": "Y"
+        },
+        {
+          "_name": "OnBehalfOfCompID",
+          "_required": "N"
+        },
+        {
+          "_name": "DeliverToCompID",
+          "_required": "N"
+        },
+        {
+          "_name": "SecureDataLen",
+          "_required": "N"
+        },
+        {
+          "_name": "SecureData",
+          "_required": "N"
+        },
+        {
+          "_name": "MsgSeqNum",
+          "_required": "Y"
+        },
+        {
+          "_name": "SenderSubID",
+          "_required": "N"
+        },
+        {
+          "_name": "SenderLocationID",
+          "_required": "N"
+        },
+        {
+          "_name": "TargetSubID",
+          "_required": "N"
+        },
+        {
+          "_name": "TargetLocationID",
+          "_required": "N"
+        },
+        {
+          "_name": "OnBehalfOfSubID",
+          "_required": "N"
+        },
+        {
+          "_name": "OnBehalfOfLocationID",
+          "_required": "N"
+        },
+        {
+          "_name": "DeliverToSubID",
+          "_required": "N"
+        },
+        {
+          "_name": "DeliverToLocationID",
+          "_required": "N"
+        },
+        {
+          "_name": "PossDupFlag",
+          "_required": "N"
+        },
+        {
+          "_name": "PossResend",
+          "_required": "N"
+        },
+        {
+          "_name": "SendingTime",
+          "_required": "Y"
+        },
+        {
+          "_name": "OrigSendingTime",
+          "_required": "N"
+        },
+        {
+          "_name": "XmlDataLen",
+          "_required": "N"
+        },
+        {
+          "_name": "XmlData",
+          "_required": "N"
+        },
+        {
+          "_name": "MessageEncoding",
+          "_required": "N"
+        },
+        {
+          "_name": "LastMsgSeqNumProcessed",
+          "_required": "N"
+        },
+        {
+          "_name": "ApplVerID",
+          "_required": "N"
+        },
+        {
+          "_name": "CstmApplVerID",
+          "_required": "N"
+        }
+      ],
+      "component": {
+        "_name": "HopGrp",
+        "_required": "N"
+      }
+    },
+    "trailer": {
+      "field": [
+        {
+          "_name": "SignatureLength",
+          "_required": "N"
+        },
+        {
+          "_name": "Signature",
+          "_required": "N"
+        },
+        {
+          "_name": "CheckSum",
+          "_required": "Y"
+        }
+      ]
+    },
+    "messages": {
+      "message": [
+        {
+          "_msgcat": "admin",
+          "_msgtype": "0",
+          "_name": "Heartbeat",
+          "field": {
+            "_name": "TestReqID",
+            "_required": "N"
+          }
+        },
+        {
+          "_msgcat": "admin",
+          "_msgtype": "1",
+          "_name": "TestRequest",
+          "field": {
+            "_name": "TestReqID",
+            "_required": "Y"
+          }
+        },
+        {
+          "_msgcat": "admin",
+          "_msgtype": "2",
+          "_name": "ResendRequest",
+          "field": [
+            {
+              "_name": "BeginSeqNo",
+              "_required": "Y"
+            },
+            {
+              "_name": "EndSeqNo",
+              "_required": "Y"
+            }
+          ]
+        },
+        {
+          "_msgcat": "admin",
+          "_msgtype": "3",
+          "_name": "Reject",
+          "field": [
+            {
+              "_name": "RefSeqNum",
+              "_required": "Y"
+            },
+            {
+              "_name": "RefTagID",
+              "_required": "N"
+            },
+            {
+              "_name": "RefMsgType",
+              "_required": "N"
+            },
+            {
+              "_name": "SessionRejectReason",
+              "_required": "N"
+            },
+            {
+              "_name": "Text",
+              "_required": "N"
+            },
+            {
+              "_name": "EncodedTextLen",
+              "_required": "N"
+            },
+            {
+              "_name": "EncodedText",
+              "_required": "N"
+            }
+          ]
+        },
+        {
+          "_msgcat": "admin",
+          "_msgtype": "4",
+          "_name": "SequenceReset",
+          "field": [
+            {
+              "_name": "GapFillFlag",
+              "_required": "N"
+            },
+            {
+              "_name": "NewSeqNo",
+              "_required": "Y"
+            }
+          ]
+        },
+        {
+          "_msgcat": "admin",
+          "_msgtype": "5",
+          "_name": "Logout",
+          "field": [
+            {
+              "_name": "Text",
+              "_required": "N"
+            },
+            {
+              "_name": "EncodedTextLen",
+              "_required": "N"
+            },
+            {
+              "_name": "EncodedText",
+              "_required": "N"
+            }
+          ]
+        },
+        {
+          "_msgcat": "admin",
+          "_msgtype": "A",
+          "_name": "Logon",
+          "field": [
+            {
+              "_name": "EncryptMethod",
+              "_required": "Y"
+            },
+            {
+              "_name": "HeartBtInt",
+              "_required": "Y"
+            },
+            {
+              "_name": "RawDataLength",
+              "_required": "N"
+            },
+            {
+              "_name": "RawData",
+              "_required": "N"
+            },
+            {
+              "_name": "ResetSeqNumFlag",
+              "_required": "N"
+            },
+            {
+              "_name": "NextExpectedMsgSeqNum",
+              "_required": "N"
+            },
+            {
+              "_name": "MaxMessageSize",
+              "_required": "N"
+            },
+            {
+              "_name": "TestMessageIndicator",
+              "_required": "N"
+            },
+            {
+              "_name": "Username",
+              "_required": "N"
+            },
+            {
+              "_name": "Password",
+              "_required": "N"
+            },
+            {
+              "_name": "DefaultApplVerID",
+              "_required": "Y"
+            }
+          ],
+          "component": {
+            "_name": "MsgTypeGrp",
+            "_required": "N"
+          }
+        }
+      ]
+    },
+    "components": {
+      "component": [
+        {
+          "_name": "HopGrp",
+          "group": {
+            "_name": "NoHops",
+            "_required": "N",
+            "field": [
+              {
+                "_name": "HopCompID",
+                "_required": "N"
+              },
+              {
+                "_name": "HopSendingTime",
+                "_required": "N"
+              },
+              {
+                "_name": "HopRefID",
+                "_required": "N"
+              }
+            ]
+          }
+        },
+        {
+          "_name": "MsgTypeGrp",
+          "group": {
+            "_name": "NoMsgTypes",
+            "_required": "N",
+            "field": [
+              {
+                "_name": "RefMsgType",
+                "_required": "N"
+              },
+              {
+                "_name": "MsgDirection",
+                "_required": "N"
+              },
+              {
+                "_name": "RefApplVerID",
+                "_required": "N"
+              },
+              {
+                "_name": "RefCstmApplVerID",
+                "_required": "N"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "fields": {
+      "field": [
+        {
+          "_name": "BeginSeqNo",
+          "_number": "7",
+          "_type": "SEQNUM"
+        },
+        {
+          "_name": "BeginString",
+          "_number": "8",
+          "_type": "STRING"
+        },
+        {
+          "_name": "BodyLength",
+          "_number": "9",
+          "_type": "LENGTH"
+        },
+        {
+          "_name": "CheckSum",
+          "_number": "10",
+          "_type": "STRING"
+        },
+        {
+          "_name": "EndSeqNo",
+          "_number": "16",
+          "_type": "SEQNUM"
+        },
+        {
+          "_name": "MsgSeqNum",
+          "_number": "34",
+          "_type": "SEQNUM"
+        },
+        {
+          "_number": "35",
+          "_name": "MsgType",
+          "_type": "STRING",
+          "value": [
+            {
+              "_enum": "0",
+              "_description": "HEARTBEAT"
+            },
+            {
+              "_enum": "1",
+              "_description": "TEST_REQUEST"
+            },
+            {
+              "_enum": "2",
+              "_description": "RESEND_REQUEST"
+            },
+            {
+              "_enum": "3",
+              "_description": "REJECT"
+            },
+            {
+              "_enum": "4",
+              "_description": "SEQUENCE_RESET"
+            },
+            {
+              "_enum": "5",
+              "_description": "LOGOUT"
+            },
+            {
+              "_enum": "6",
+              "_description": "INDICATION_OF_INTEREST"
+            },
+            {
+              "_enum": "7",
+              "_description": "ADVERTISEMENT"
+            },
+            {
+              "_enum": "8",
+              "_description": "EXECUTION_REPORT"
+            },
+            {
+              "_enum": "9",
+              "_description": "ORDER_CANCEL_REJECT"
+            },
+            {
+              "_enum": "A",
+              "_description": "LOGON"
+            },
+            {
+              "_enum": "B",
+              "_description": "NEWS"
+            },
+            {
+              "_enum": "C",
+              "_description": "EMAIL"
+            },
+            {
+              "_enum": "D",
+              "_description": "ORDER_SINGLE"
+            },
+            {
+              "_enum": "E",
+              "_description": "ORDER_LIST"
+            },
+            {
+              "_enum": "F",
+              "_description": "ORDER_CANCEL_REQUEST"
+            },
+            {
+              "_enum": "G",
+              "_description": "ORDER_CANCEL_REPLACE_REQUEST"
+            },
+            {
+              "_enum": "H",
+              "_description": "ORDER_STATUS_REQUEST"
+            },
+            {
+              "_enum": "J",
+              "_description": "ALLOCATION_INSTRUCTION"
+            },
+            {
+              "_enum": "K",
+              "_description": "LIST_CANCEL_REQUEST"
+            },
+            {
+              "_enum": "L",
+              "_description": "LIST_EXECUTE"
+            },
+            {
+              "_enum": "M",
+              "_description": "LIST_STATUS_REQUEST"
+            },
+            {
+              "_enum": "N",
+              "_description": "LIST_STATUS"
+            },
+            {
+              "_enum": "P",
+              "_description": "ALLOCATION_INSTRUCTION_ACK"
+            },
+            {
+              "_enum": "Q",
+              "_description": "DONT_KNOW_TRADE"
+            },
+            {
+              "_enum": "R",
+              "_description": "QUOTE_REQUEST"
+            },
+            {
+              "_enum": "S",
+              "_description": "QUOTE"
+            },
+            {
+              "_enum": "T",
+              "_description": "SETTLEMENT_INSTRUCTIONS"
+            },
+            {
+              "_enum": "V",
+              "_description": "MARKET_DATA_REQUEST"
+            },
+            {
+              "_enum": "W",
+              "_description": "MARKET_DATA_SNAPSHOT_FULL_REFRESH"
+            },
+            {
+              "_enum": "X",
+              "_description": "MARKET_DATA_INCREMENTAL_REFRESH"
+            },
+            {
+              "_enum": "Y",
+              "_description": "MARKET_DATA_REQUEST_REJECT"
+            },
+            {
+              "_enum": "Z",
+              "_description": "QUOTE_CANCEL"
+            },
+            {
+              "_enum": "a",
+              "_description": "QUOTE_STATUS_REQUEST"
+            },
+            {
+              "_enum": "b",
+              "_description": "MASS_QUOTE_ACKNOWLEDGEMENT"
+            },
+            {
+              "_enum": "c",
+              "_description": "SECURITY_DEFINITION_REQUEST"
+            },
+            {
+              "_enum": "d",
+              "_description": "SECURITY_DEFINITION"
+            },
+            {
+              "_enum": "e",
+              "_description": "SECURITY_STATUS_REQUEST"
+            },
+            {
+              "_enum": "f",
+              "_description": "SECURITY_STATUS"
+            },
+            {
+              "_enum": "g",
+              "_description": "TRADING_SESSION_STATUS_REQUEST"
+            },
+            {
+              "_enum": "h",
+              "_description": "TRADING_SESSION_STATUS"
+            },
+            {
+              "_enum": "i",
+              "_description": "MASS_QUOTE"
+            },
+            {
+              "_enum": "j",
+              "_description": "BUSINESS_MESSAGE_REJECT"
+            },
+            {
+              "_enum": "k",
+              "_description": "BID_REQUEST"
+            },
+            {
+              "_enum": "l",
+              "_description": "BID_RESPONSE"
+            },
+            {
+              "_enum": "m",
+              "_description": "LIST_STRIKE_PRICE"
+            },
+            {
+              "_enum": "n",
+              "_description": "XML_MESSAGE"
+            },
+            {
+              "_enum": "o",
+              "_description": "REGISTRATION_INSTRUCTIONS"
+            },
+            {
+              "_enum": "p",
+              "_description": "REGISTRATION_INSTRUCTIONS_RESPONSE"
+            },
+            {
+              "_enum": "q",
+              "_description": "ORDER_MASS_CANCEL_REQUEST"
+            },
+            {
+              "_enum": "r",
+              "_description": "ORDER_MASS_CANCEL_REPORT"
+            },
+            {
+              "_enum": "s",
+              "_description": "NEW_ORDER_CROSS"
+            },
+            {
+              "_enum": "t",
+              "_description": "CROSS_ORDER_CANCEL_REPLACE_REQUEST"
+            },
+            {
+              "_enum": "u",
+              "_description": "CROSS_ORDER_CANCEL_REQUEST"
+            },
+            {
+              "_enum": "v",
+              "_description": "SECURITY_TYPE_REQUEST"
+            },
+            {
+              "_enum": "w",
+              "_description": "SECURITY_TYPES"
+            },
+            {
+              "_enum": "x",
+              "_description": "SECURITY_LIST_REQUEST"
+            },
+            {
+              "_enum": "y",
+              "_description": "SECURITY_LIST"
+            },
+            {
+              "_enum": "z",
+              "_description": "DERIVATIVE_SECURITY_LIST_REQUEST"
+            },
+            {
+              "_enum": "AA",
+              "_description": "DERIVATIVE_SECURITY_LIST"
+            },
+            {
+              "_enum": "AB",
+              "_description": "NEW_ORDER_MULTILEG"
+            },
+            {
+              "_enum": "AC",
+              "_description": "MULTILEG_ORDER_CANCEL_REPLACE"
+            },
+            {
+              "_enum": "AD",
+              "_description": "TRADE_CAPTURE_REPORT_REQUEST"
+            },
+            {
+              "_enum": "AE",
+              "_description": "TRADE_CAPTURE_REPORT"
+            },
+            {
+              "_enum": "AF",
+              "_description": "ORDER_MASS_STATUS_REQUEST"
+            },
+            {
+              "_enum": "AG",
+              "_description": "QUOTE_REQUEST_REJECT"
+            },
+            {
+              "_enum": "AH",
+              "_description": "RFQ_REQUEST"
+            },
+            {
+              "_enum": "AI",
+              "_description": "QUOTE_STATUS_REPORT"
+            },
+            {
+              "_enum": "AJ",
+              "_description": "QUOTE_RESPONSE"
+            },
+            {
+              "_enum": "AK",
+              "_description": "CONFIRMATION"
+            },
+            {
+              "_enum": "AL",
+              "_description": "POSITION_MAINTENANCE_REQUEST"
+            },
+            {
+              "_enum": "AM",
+              "_description": "POSITION_MAINTENANCE_REPORT"
+            },
+            {
+              "_enum": "AN",
+              "_description": "REQUEST_FOR_POSITIONS"
+            },
+            {
+              "_enum": "AO",
+              "_description": "REQUEST_FOR_POSITIONS_ACK"
+            },
+            {
+              "_enum": "AP",
+              "_description": "POSITION_REPORT"
+            },
+            {
+              "_enum": "AQ",
+              "_description": "TRADE_CAPTURE_REPORT_REQUEST_ACK"
+            },
+            {
+              "_enum": "AR",
+              "_description": "TRADE_CAPTURE_REPORT_ACK"
+            },
+            {
+              "_enum": "AS",
+              "_description": "ALLOCATION_REPORT"
+            },
+            {
+              "_enum": "AT",
+              "_description": "ALLOCATION_REPORT_ACK"
+            },
+            {
+              "_enum": "AU",
+              "_description": "CONFIRMATION_ACK"
+            },
+            {
+              "_enum": "AV",
+              "_description": "SETTLEMENT_INSTRUCTION_REQUEST"
+            },
+            {
+              "_enum": "AW",
+              "_description": "ASSIGNMENT_REPORT"
+            },
+            {
+              "_enum": "AX",
+              "_description": "COLLATERAL_REQUEST"
+            },
+            {
+              "_enum": "AY",
+              "_description": "COLLATERAL_ASSIGNMENT"
+            },
+            {
+              "_enum": "AZ",
+              "_description": "COLLATERAL_RESPONSE"
+            },
+            {
+              "_enum": "BA",
+              "_description": "COLLATERAL_REPORT"
+            },
+            {
+              "_enum": "BB",
+              "_description": "COLLATERAL_INQUIRY"
+            },
+            {
+              "_enum": "BC",
+              "_description": "NETWORK_STATUS_REQUEST"
+            },
+            {
+              "_enum": "BD",
+              "_description": "NETWORK_STATUS_RESPONSE"
+            },
+            {
+              "_enum": "BE",
+              "_description": "USER_REQUEST"
+            },
+            {
+              "_enum": "BF",
+              "_description": "USER_RESPONSE"
+            },
+            {
+              "_enum": "BG",
+              "_description": "COLLATERAL_INQUIRY_ACK"
+            },
+            {
+              "_enum": "BH",
+              "_description": "CONFIRMATION_REQUEST"
+            },
+            {
+              "_enum": "BI",
+              "_description": "TRADING_SESSION_LIST_REQUEST"
+            },
+            {
+              "_enum": "BJ",
+              "_description": "TRADING_SESSION_LIST"
+            },
+            {
+              "_enum": "BK",
+              "_description": "SECURITY_LIST_UPDATE_REPORT"
+            },
+            {
+              "_enum": "BL",
+              "_description": "ADJUSTED_POSITION_REPORT"
+            },
+            {
+              "_enum": "BM",
+              "_description": "ALLOCATION_INSTRUCTION_ALERT"
+            },
+            {
+              "_enum": "BN",
+              "_description": "EXECUTION_ACKNOWLEDGEMENT"
+            },
+            {
+              "_enum": "BO",
+              "_description": "CONTRARY_INTENTION_REPORT"
+            },
+            {
+              "_enum": "BP",
+              "_description": "SECURITY_DEFINITION_UPDATE_REPORT"
+            }
+          ]
+        },
+        {
+          "_name": "NewSeqNo",
+          "_number": "36",
+          "_type": "SEQNUM"
+        },
+        {
+          "_name": "PossDupFlag",
+          "_number": "43",
+          "_type": "BOOLEAN"
+        },
+        {
+          "_name": "RefSeqNum",
+          "_number": "45",
+          "_type": "SEQNUM"
+        },
+        {
+          "_name": "SenderCompID",
+          "_number": "49",
+          "_type": "STRING"
+        },
+        {
+          "_name": "SenderSubID",
+          "_number": "50",
+          "_type": "STRING"
+        },
+        {
+          "_name": "SendingTime",
+          "_number": "52",
+          "_type": "UTCTIMESTAMP"
+        },
+        {
+          "_name": "TargetCompID",
+          "_number": "56",
+          "_type": "STRING"
+        },
+        {
+          "_name": "TargetSubID",
+          "_number": "57",
+          "_type": "STRING"
+        },
+        {
+          "_name": "Text",
+          "_number": "58",
+          "_type": "STRING"
+        },
+        {
+          "_name": "Signature",
+          "_number": "89",
+          "_type": "DATA"
+        },
+        {
+          "_name": "SecureDataLen",
+          "_number": "90",
+          "_type": "LENGTH"
+        },
+        {
+          "_name": "SecureData",
+          "_number": "91",
+          "_type": "DATA"
+        },
+        {
+          "_name": "SignatureLength",
+          "_number": "93",
+          "_type": "LENGTH"
+        },
+        {
+          "_name": "RawDataLength",
+          "_number": "95",
+          "_type": "LENGTH"
+        },
+        {
+          "_name": "RawData",
+          "_number": "96",
+          "_type": "DATA"
+        },
+        {
+          "_name": "PossResend",
+          "_number": "97",
+          "_type": "BOOLEAN"
+        },
+        {
+          "_name": "EncryptMethod",
+          "_number": "98",
+          "_type": "INT",
+          "value": [
+            {
+              "_description": "NONE_OTHER",
+              "_enum": "0"
+            },
+            {
+              "_description": "PKCS",
+              "_enum": "1"
+            },
+            {
+              "_description": "DES",
+              "_enum": "2"
+            },
+            {
+              "_description": "PKCS_DES",
+              "_enum": "3"
+            },
+            {
+              "_description": "PGP_DES",
+              "_enum": "4"
+            },
+            {
+              "_description": "PGP_DES_MD5",
+              "_enum": "5"
+            },
+            {
+              "_description": "PEM_DES_MD5",
+              "_enum": "6"
+            }
+          ]
+        },
+        {
+          "_name": "HeartBtInt",
+          "_number": "108",
+          "_type": "INT"
+        },
+        {
+          "_name": "TestReqID",
+          "_number": "112",
+          "_type": "STRING"
+        },
+        {
+          "_name": "OnBehalfOfCompID",
+          "_number": "115",
+          "_type": "STRING"
+        },
+        {
+          "_name": "OnBehalfOfSubID",
+          "_number": "116",
+          "_type": "STRING"
+        },
+        {
+          "_name": "OrigSendingTime",
+          "_number": "122",
+          "_type": "UTCTIMESTAMP"
+        },
+        {
+          "_name": "GapFillFlag",
+          "_number": "123",
+          "_type": "BOOLEAN"
+        },
+        {
+          "_name": "DeliverToCompID",
+          "_number": "128",
+          "_type": "STRING"
+        },
+        {
+          "_name": "DeliverToSubID",
+          "_number": "129",
+          "_type": "STRING"
+        },
+        {
+          "_name": "ResetSeqNumFlag",
+          "_number": "141",
+          "_type": "BOOLEAN"
+        },
+        {
+          "_name": "SenderLocationID",
+          "_number": "142",
+          "_type": "STRING"
+        },
+        {
+          "_name": "TargetLocationID",
+          "_number": "143",
+          "_type": "STRING"
+        },
+        {
+          "_name": "OnBehalfOfLocationID",
+          "_number": "144",
+          "_type": "STRING"
+        },
+        {
+          "_name": "DeliverToLocationID",
+          "_number": "145",
+          "_type": "STRING"
+        },
+        {
+          "_name": "XmlDataLen",
+          "_number": "212",
+          "_type": "LENGTH"
+        },
+        {
+          "_name": "XmlData",
+          "_number": "213",
+          "_type": "DATA"
+        },
+        {
+          "_number": "347",
+          "_name": "MessageEncoding",
+          "_type": "STRING",
+          "value": [
+            {
+              "_enum": "ISO_2022_JP",
+              "_description": "ISO_2022_JP"
+            },
+            {
+              "_enum": "EUC_JP",
+              "_description": "EUC_JP"
+            },
+            {
+              "_enum": "SHIFT_JIS",
+              "_description": "SHIFT_JIS"
+            },
+            {
+              "_enum": "UTF_8",
+              "_description": "UTF_8"
+            }
+          ]
+        },
+        {
+          "_name": "EncodedTextLen",
+          "_number": "354",
+          "_type": "LENGTH"
+        },
+        {
+          "_name": "EncodedText",
+          "_number": "355",
+          "_type": "DATA"
+        },
+        {
+          "_name": "LastMsgSeqNumProcessed",
+          "_number": "369",
+          "_type": "SEQNUM"
+        },
+        {
+          "_name": "RefTagID",
+          "_number": "371",
+          "_type": "INT"
+        },
+        {
+          "_name": "RefMsgType",
+          "_number": "372",
+          "_type": "STRING"
+        },
+        {
+          "_name": "SessionRejectReason",
+          "_number": "373",
+          "_type": "INT",
+          "value": [
+            {
+              "_description": "INVALID_TAG_NUMBER",
+              "_enum": "0"
+            },
+            {
+              "_description": "REQUIRED_TAG_MISSING",
+              "_enum": "1"
+            },
+            {
+              "_description": "SENDINGTIME_ACCURACY_PROBLEM",
+              "_enum": "10"
+            },
+            {
+              "_description": "INVALID_MSGTYPE",
+              "_enum": "11"
+            },
+            {
+              "_description": "XML_VALIDATION_ERROR",
+              "_enum": "12"
+            },
+            {
+              "_description": "TAG_APPEARS_MORE_THAN_ONCE",
+              "_enum": "13"
+            },
+            {
+              "_description": "TAG_SPECIFIED_OUT_OF_REQUIRED_ORDER",
+              "_enum": "14"
+            },
+            {
+              "_description": "REPEATING_GROUP_FIELDS_OUT_OF_ORDER",
+              "_enum": "15"
+            },
+            {
+              "_description": "INCORRECT_NUMINGROUP_COUNT_FOR_REPEATING_GROUP",
+              "_enum": "16"
+            },
+            {
+              "_description": "NON_DATA_VALUE_INCLUDES_FIELD_DELIMITER",
+              "_enum": "17"
+            },
+            {
+              "_description": "TAG_NOT_DEFINED_FOR_THIS_MESSAGE_TYPE",
+              "_enum": "2"
+            },
+            {
+              "_description": "UNDEFINED_TAG",
+              "_enum": "3"
+            },
+            {
+              "_description": "TAG_SPECIFIED_WITHOUT_A_VALUE",
+              "_enum": "4"
+            },
+            {
+              "_description": "VALUE_IS_INCORRECT",
+              "_enum": "5"
+            },
+            {
+              "_description": "INCORRECT_DATA_FORMAT_FOR_VALUE",
+              "_enum": "6"
+            },
+            {
+              "_description": "DECRYPTION_PROBLEM",
+              "_enum": "7"
+            },
+            {
+              "_description": "SIGNATURE_PROBLEM",
+              "_enum": "8"
+            },
+            {
+              "_description": "COMPID_PROBLEM",
+              "_enum": "9"
+            },
+            {
+              "_description": "OTHER",
+              "_enum": "99"
+            }
+          ]
+        },
+        {
+          "_name": "MaxMessageSize",
+          "_number": "383",
+          "_type": "LENGTH"
+        },
+        {
+          "_name": "NoMsgTypes",
+          "_number": "384",
+          "_type": "NUMINGROUP"
+        },
+        {
+          "_name": "MsgDirection",
+          "_number": "385",
+          "_type": "CHAR",
+          "value": [
+            {
+              "_description": "RECEIVE",
+              "_enum": "R"
+            },
+            {
+              "_description": "SEND",
+              "_enum": "S"
+            }
+          ]
+        },
+        {
+          "_name": "TestMessageIndicator",
+          "_number": "464",
+          "_type": "BOOLEAN"
+        },
+        {
+          "_name": "Username",
+          "_number": "553",
+          "_type": "STRING"
+        },
+        {
+          "_name": "Password",
+          "_number": "554",
+          "_type": "STRING"
+        },
+        {
+          "_name": "NoHops",
+          "_number": "627",
+          "_type": "NUMINGROUP"
+        },
+        {
+          "_name": "HopCompID",
+          "_number": "628",
+          "_type": "STRING"
+        },
+        {
+          "_name": "HopSendingTime",
+          "_number": "629",
+          "_type": "UTCTIMESTAMP"
+        },
+        {
+          "_name": "HopRefID",
+          "_number": "630",
+          "_type": "SEQNUM"
+        },
+        {
+          "_name": "NextExpectedMsgSeqNum",
+          "_number": "789",
+          "_type": "SEQNUM"
+        },
+        {
+          "_name": "ApplVerID",
+          "_number": "1128",
+          "_type": "STRING",
+          "value": [
+            {
+              "_description": "FIX27",
+              "_enum": "0"
+            },
+            {
+              "_description": "FIX30",
+              "_enum": "1"
+            },
+            {
+              "_description": "FIX40",
+              "_enum": "2"
+            },
+            {
+              "_description": "FIX41",
+              "_enum": "3"
+            },
+            {
+              "_description": "FIX42",
+              "_enum": "4"
+            },
+            {
+              "_description": "FIX43",
+              "_enum": "5"
+            },
+            {
+              "_description": "FIX44",
+              "_enum": "6"
+            },
+            {
+              "_description": "FIX50",
+              "_enum": "7"
+            },
+            {
+              "_description": "FIX50SP1",
+              "_enum": "8"
+            },
+            {
+              "_description": "FIX50SP2",
+              "_enum": "9"
+            }
+          ]
+        },
+        {
+          "_name": "CstmApplVerID",
+          "_number": "1129",
+          "_type": "STRING"
+        },
+        {
+          "_name": "RefApplVerID",
+          "_number": "1130",
+          "_type": "STRING"
+        },
+        {
+          "_name": "RefCstmApplVerID",
+          "_number": "1131",
+          "_type": "STRING"
+        },
+        {
+          "_name": "DefaultApplVerID",
+          "_number": "1137",
+          "_type": "STRING"
+        }
+      ]
+    }
+  }
+}

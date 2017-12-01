@@ -1,0 +1,30 @@
+<div class="row page-header">
+    <div ng-if="market.name == null" class="col-xs-8">
+        <span class="lead"><strong>Market Simulator</strong></span>
+    </div>
+    <div ng-if="market.name != null" class="col-xs-8">
+        <span class="lead"><strong><a href="" ng-click="editMarket(market)">{{market.name}}</a></strong></span>
+    </div>
+    <div class="col-xs-4 text-right">
+
+        <form class="form-inline">
+          <div class="dropdown input-group" >
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" ng-disabled="market.isrunning">Create
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="" ng-click="newMarket('COMMON')">COMMON</a></li>
+            </ul>
+          </div>
+          <label class="btn btn-default btn-file" ng-disabled="market.isrunning">
+              Load <input type="file" class="file" style="display: none;" ng-file-select="onFileSelect($files)">
+          </label>
+          <button class="btn btn-success" ng-click="startMarket(market)" title="Start" ng-disabled="market.name == null || market.isrunning"><i class="fa fa-play" aria-hidden="true"></i> Start</button>
+          <button class="btn btn-danger" ng-click="stopMarket(market)"  title="Stop" ng-disabled="!market.isrunning"><i class="fa fa-stop" aria-hidden="true"></i> Stop</button>
+
+        </form>
+    </div>
+</div>
+<div class="page-body">
+    <div class="row">
+    </div>
+</div>

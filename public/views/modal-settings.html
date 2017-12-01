@@ -1,0 +1,68 @@
+<form name="form.settingsForm" ng-submit="submitForm(settings)" novalidate>
+    <div class="modal-header">
+        <h3>Market Settings</h3>
+    </div>
+    <div class="modal-body">
+        <div class="panel panel-default">
+          <div class="panel-heading">Market Information</div>
+          <div class="panel-body">
+            <div id="collapseInfo">
+              <div class="form-group"">
+                  <div class="form-group"">
+                      <label>Exchange Type: </label>
+                      <span>{{settings.type}}</span>
+                  </div>
+                  <div class="form-group">
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" class="form-control" ng-model="settings.name" required />
+                    <p ng-show="form.settingsForm.settings.name.$invalid && !form.settingsForm.settings.name.$pristine" class="help-block">Name is required.</p>
+                  </div>
+                  <div class="form-group"">
+                    <label for="descr">Description: </label>
+                    <textarea name='descr' style="max-width: 100%" rows="2" class="form-control vresize" ng-model="settings.description" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="parties">Parties: </label>
+                  <textarea name='parties' style="max-width: 100%" rows="5" class="form-control vresize" ng-model="settings.parties" />
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">Gateway</div>
+          <div class="panel-body">
+            <div id="collapseDC">
+                <div class="form-group">
+                  <label>FIX Version: </label>
+                  <input type="text" class="form-control" ng-model="settings.gateways[0].fixversion" required />
+                  <p ng-show="form.settingsForm.settings.gateways[0].fixversion.$invalid && !form.settingsForm.settings.gateways[0].fixversion.$pristine" class="help-block">Fix Version is required.</p>
+                </div>
+                <div class="form-group">
+                  <label>Spec: </label>
+                  <input type="text" class="form-control" ng-model="settings.gateways[0].spec" required />
+                  <p ng-show="form.settingsForm.settings.gateways[0].spec.$invalid && !form.settingsForm.settings.gateways[0].spec.$pristine" class="help-block">Spec is required.</p>
+                </div>
+                <div class="form-group"">
+                  <label>Port: </label>
+                  <input type="text" class="form-control" ng-model="settings.gateways[0].port" required />
+                  <p ng-show="form.settingsForm.settings.gateways[0].port.$invalid && !form.settingsForm.settings.gateways[0].port.$pristine" class="help-block">Port is required.</p>
+                </div>
+                <div class="form-group">
+                  <label>Options: </label>
+                  <textarea style="max-width: 100%" rows="5" class="form-control vresize" ng-model="settings.gateways[0].options" />
+                </div>
+                <div class="form-group">
+                  <label>Accounts: </label>
+                  <textarea style="max-width: 100%" rows="5" class="form-control vresize" ng-model="settings.gateways[0].accounts" required />
+                  <p ng-show="form.settingsForm.settings.gateways[0].accounts.$invalid && !form.settingsForm.settings.gateways[0].accounts.$pristine" class="help-block">Accounts are required.</p>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" ng-disabled="form.settingsForm.$invalid">Save</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</form>

@@ -1,0 +1,33 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height: 100%;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.row.center {
+   display: flex;
+   align-items: center;
+}
+
+.container-fluid {
+    margin: 0 auto;
+    height: 100%;
+    padding: 20px 0;
+
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.tab-container {
+  padding:15px;
+}
+
+.editable-wrap {
+    width: 100%;
+}
+

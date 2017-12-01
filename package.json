@@ -1,0 +1,33 @@
+{
+  "name": "fixServer",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node  --max-old-space-size=4096 ./bin/www"
+  },
+  "description": "FIX Server Simulator",
+  "author": {
+    "name": "steve.li",
+    "email": "steve.li.xin@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/slixin/fixserver.git"
+  },
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "jade": "~1.11.0",
+    "morgan": "~1.6.1",
+    "serve-favicon": "~2.3.0",
+    "moment": "~2.14.1",
+    "dict": "~1.4.0",
+    "nodefix": "~1.2.9",
+    "async": "~1.4.0",
+    "csvtojson": "~1.1.7",
+    "log": "~1.4.0",
+    "moment-timezone": "~0.5.13"
+  }
+}
