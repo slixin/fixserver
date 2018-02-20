@@ -7,7 +7,7 @@ var dictPath = require("path").join(__dirname, "dict");
 var utils = require("./utils.js");
 var Log = require('log');
 var FixServer = require('nodefix').FixServer;
-var CommonRuler = require('./ruler/common/common.js');
+var CommonRuler = require('./ruler/common/42.js');
 
 module.exports = MarketManager;
 
@@ -16,7 +16,7 @@ module.exports = MarketManager;
 /*==================================================*/
 function MarketManager(market) {
     var self = this;
-    var log = new Log('INFO');
+    var log = new Log('ERROR');
     self.market = market;
     self.orders = [];
     self.trades = [];
@@ -105,6 +105,7 @@ function MarketManager(market) {
         self.market.gateways.forEach(function(gateway) {
             startGateway(gateway);
         });
+        self.ruler.gateways = self.gateways;
         cb();
     }
 
